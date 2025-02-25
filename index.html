@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cover Page Generator</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- jsPDF & html2canvas CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Cover Page Generator</h1>
+    <!-- ইনপুট ফর্ম -->
+    <form id="coverForm">
+      <label>প্রতিষ্ঠানের লোগো: <input type="file" id="logoInput" accept="image/*"></label>
+      <label>কোর্সের নাম: <input type="text" id="courseName" required></label>
+      <label>কোর্স কোড: <input type="text" id="courseCode"></label>
+      <label>বিষয়বস্তু: <input type="text" id="subject"></label>
+      <label>আপনার নাম: <input type="text" id="studentName" required></label>
+      <label>স্টুডেন্ট আইডি: <input type="text" id="studentID"></label>
+      <label>বিভাগ: <input type="text" id="department"></label>
+      <label>শিক্ষকের নাম: <input type="text" id="teacherName"></label>
+      <label>শিক্ষকের পদবী: <input type="text" id="teacherDesignation"></label>
+      <label>জমাদানের তারিখ: <input type="date" id="submissionDate"></label>
+      <button type="button" id="generateBtn">কভার পেজ তৈরি করুন</button>
+    </form>
+    
+    <!-- কভার পেজ প্রিভিউ -->
+    <div id="coverPage" class="cover-page">
+      <!-- এখানে জাভাস্ক্রিপ্ট দ্বারা ডায়নামিক কভার পেজ তৈরী হবে -->
+      <img id="logoPreview" src="" alt="লোগো" style="display:none; max-width: 100px;">
+      <h2 id="courseNamePreview"></h2>
+      <p id="courseCodePreview"></p>
+      <p id="subjectPreview"></p>
+      <p id="studentNamePreview"></p>
+      <p id="studentIDPreview"></p>
+      <p id="departmentPreview"></p>
+      <p id="teacherNamePreview"></p>
+      <p id="teacherDesignationPreview"></p>
+      <p id="submissionDatePreview"></p>
+    </div>
+    
+    <!-- ডাউনলোড বাটন -->
+    <button type="button" id="downloadPdfBtn" style="display:none;">PDF ডাউনলোড করুন</button>
+    <button type="button" id="downloadImgBtn" style="display:none;">ছবি ডাউনলোড করুন</button>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
